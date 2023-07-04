@@ -19,15 +19,18 @@ export default function Home() {
     console.log("formdata", formData)
   }
 
+  // can be declared as a separate object
+  const initialValues = {
+    username: "",
+    password: "",
+  }
+
   const { 
     handleSubmit,
     values, 
     handleChange
   } = useFormik({
-    initialValues: {
-      username: "",
-      password: "",
-    },
+    initialValues, 
     onSubmit: values => submit(values)
   })
   
